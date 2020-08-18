@@ -4,10 +4,10 @@
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const gulp = require("gulp");
+const sass = require("gulp-sass");
 const plumber = require("gulp-plumber");
 const postcss = require("gulp-postcss");
 const rename = require("gulp-rename");
-const sass = require("gulp-sass");
 
 // CSS task
 function css() {
