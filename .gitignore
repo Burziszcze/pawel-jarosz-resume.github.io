@@ -1,4 +1,4 @@
 node_modules
 package-lock.json
-assets/css/bootstrap/scss
-assets/css/main.min.css
+/assets/css/bootstrap/scss
+/assets/css/main.min.css
