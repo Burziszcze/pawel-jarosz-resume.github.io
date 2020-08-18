@@ -33,4 +33,5 @@ const watch = gulp.parallel(watchFiles);
 // export tasks
 exports.watch = watch;
 exports.build = build;
+
 exports.default = watch;
