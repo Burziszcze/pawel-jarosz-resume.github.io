@@ -11,19 +11,19 @@ const rename = require("gulp-rename");
 
 // CSS task
 function css() {
-    return gulp
-        .src("./assets/scss/**/*.scss")
-        .pipe(plumber())
-        .pipe(sass({ outputStyle: "expanded" }))
-        .pipe(gulp.dest("./assets/css/"))
-        .pipe(rename({ suffix: ".min" }))
-        .pipe(postcss([autoprefixer(), cssnano()]))
-        .pipe(gulp.dest("./assets/css/"))
+  return gulp
+    .src("./assets/scss/**/*.scss")
+    .pipe(plumber())
+    .pipe(sass({ outputStyle: "expanded" }))
+    .pipe(gulp.dest("./assets/css/"))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(gulp.dest("./assets/css/"));
 }
 
 // Watch files
 function watchFiles() {
-    gulp.watch("./assets/scss/**/*", css);
+  gulp.watch("./assets/scss/**/*", css);
 }
 
 // define complex tasks
