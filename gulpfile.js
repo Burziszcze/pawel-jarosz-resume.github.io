@@ -16,9 +16,11 @@ function css() {
     .pipe(plumber())
     .pipe(sass({ outputStyle: "expanded" }))
     .pipe(gulp.dest("./assets/css/"))
+    .pipe(gulp.dest("./pages/css/"))
     .pipe(rename({ suffix: ".min" }))
     .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(gulp.dest("./assets/css/"));
+    .pipe(gulp.dest("./assets/css/"))
+    .pipe(gulp.dest("./pages/css/"));
 }
 
 // Watch files
