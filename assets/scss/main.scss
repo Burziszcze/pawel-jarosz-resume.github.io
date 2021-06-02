@@ -17,6 +17,7 @@ $theme-colors: (
 
 //Import Bootstrap
 @import "bootstrap/scss/bootstrap.scss";
+@import "bootstrap/scss/print";
 
 /*************************** Styles ****************************/
 body {
@@ -245,5 +246,21 @@ a.theme-btn-on-bg,
     border: 5px solid #404040;
     height: auto;
     @include border-radius(3px);
+  }
+}
+
+// print
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @for $i from 1 through $grid-columns {
+      @media print {
+        .col-print#{$infix}-#{$i} {
+          @include make-col($i, $grid-columns);
+        }
+      }
+    }
   }
 }
